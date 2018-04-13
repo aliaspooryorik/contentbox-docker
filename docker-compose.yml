@@ -1,0 +1,12 @@
+version: '3'
+services:
+  web:
+    build: .
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./contentbox-db:/data/contentbox/db \
+      - ./contentbox-media:/app/includes/shared/media
+    environment:
+      - express=true
+      - install=true
